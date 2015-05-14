@@ -4,17 +4,20 @@ $gutter: 0em;
 @import '../bower_components/neat/app/assets/stylesheets/neat';
 
 body {
-	background-image: url("../images/bg.jpg");
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	background-image: url("../images/bg2.jpg");
+//	-webkit-background-size: cover;
+//	-moz-background-size: cover;
+//	-o-background-size: cover;
+//	background-size: cover;
+	background-repeat:no-repeat;
+    background-position:center;
 }
 
 .container {
 	padding-top: 150px;
 	@include outer-container(740px);	
 	border-radius: 10px;
+	button:focus {outline:0;}
 }
 
 .shadow {
@@ -35,6 +38,7 @@ button {
 	@include span-columns(3);
 	height: 40px;
 	color: white;
+	font-size: 25px;
 }
 
 .zero {

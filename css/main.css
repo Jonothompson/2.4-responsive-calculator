@@ -7,11 +7,9 @@ html {
   box-sizing: inherit; }
 
 body {
-  background-image: url("../images/bg.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
+  background-image: url("../images/bg2.jpg");
+  background-repeat: no-repeat;
+  background-position: center; }
 
 .container {
   padding-top: 150px;
@@ -23,6 +21,8 @@ body {
     clear: both;
     content: "";
     display: table; }
+  .container button:focus {
+    outline: 0; }
 
 .shadow {
   float: left;
@@ -52,7 +52,8 @@ button {
   margin-right: 0%;
   width: 25%;
   height: 40px;
-  color: white; }
+  color: white;
+  font-size: 25px; }
   button:last-child {
     margin-right: 0; }
 
