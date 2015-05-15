@@ -1,27 +1,22 @@
-var operation;
-
-function plusPressed(){
-  operation = '+';
+// 1. Write a function that alerts the value of a button
+// 2. Write a event listener that listens for the event 
+//    of clicking on a word button and calls the function from (1)
+function alertButtonValue(event) {
+  var button = event.target;
+  var text = button.textContent;
+  alert(text);
 }
 
-function numberPressed(number){
-  var displayedNumber = Number(document.getElementById('display').textContent);
-  
-  if(operation == '+') {
-      displayedNumber = displayedNumber + number;
-  } else if(operation == '-') {
-    
-  } else {
-    displayedNumber = number;
-  }
-  
- document.getElementById('display').textContent = displayedNumber;
+[].forEach.call(document.querySelectorAll('.calc-button-number'), function(element){
+  element.addEventListener('click', alertButtonValue);
+}, false);
+
+function alertNumberPlusNumber(event) {
+  var button = event.target;
+  var number = Number(button.textContent);
+  alert(number + number);
 }
 
-function ninePressed(event) {
-  event.preventDefault();
-  numberPressed(9);
-}
-
-document.getElementById('9').addEventListener('click', ninePressed);
-document.getElementById('+').addEventListener('click', plusPressed);
+[].forEach.call(document.querySelectorAll('.calc-button-number'), function(element){
+  element.addEventListener('click', alertNumberPlusNumber);
+}, false);

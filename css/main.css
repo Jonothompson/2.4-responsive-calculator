@@ -34,7 +34,7 @@ body {
   .shadow:last-child {
     margin-right: 0; }
 
-.display {
+.display-box {
   background-color: #333333;
   float: left;
   display: block;
@@ -45,8 +45,13 @@ body {
   border-radius: 10px 10px 0 0;
   color: white;
   font-size: 30px; }
-  .display:last-child {
+  .display-box:last-child {
     margin-right: 0; }
+
+.display {
+  margin: 0px;
+  color: white;
+  line-height: 65px; }
 
 button {
   float: left;
