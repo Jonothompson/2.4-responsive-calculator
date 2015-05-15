@@ -14,7 +14,7 @@ function alertButtonValue(event) {
 function alertNumberPlusNumber(event) {
   var button = event.target;
   var number = Number(button.textContent);
-  alert(number + number);
+  alert(number);
 }
 
 [].forEach.call(document.querySelectorAll('.calc-button-number'), function(element){
