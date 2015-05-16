@@ -44,14 +44,14 @@ body {
   border: 1px solid #C0C0C0;
   border-radius: 10px 10px 0 0;
   color: white;
-  font-size: 30px; }
+  font-size: 30px;
+  text-align: right;
+  margin: 0px; }
   .display-box:last-child {
     margin-right: 0; }
-
-.display {
-  margin: 0px;
-  color: white;
-  line-height: 65px; }
+  .display-box h2 {
+    margin: 10px 0 0 0;
+    padding-right: 10px; }
 
 button {
   float: left;

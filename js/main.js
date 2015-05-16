@@ -1,16 +1,14 @@
 
 var numberList = [];
-//var equationInput = numberList.join('');
-//var equationAnswer = eval(equationInput);
 var calculated = 0;
-var displayed = "";
+var displayed = "0";
 
 
 function alertNumber(event) {
   var button = event.target;
   var number = Number(button.textContent);
   var lastPressed = numberList.push(number);
-  changeContent(displayed)
+  changeContent(numberList)
 
 }
 
@@ -32,7 +30,7 @@ function alertActionClear(event) {
   var button = event.target;
   var text = button.textContent;
   numberList = [];
-  calculated = 0;
+  changeContent(displayed)
 }
 
 [].forEach.call(document.querySelectorAll('.calc-button-ac'), function(element){
@@ -69,23 +67,23 @@ function alertPeriod(event) {
   element.addEventListener('click', alertPeriod);
 }, false);
 
+
 function alertEquals(event) {
   var button = event.target;
   var text = button.textContent;
   var equationInput = numberList.join("");
   var equationAnswer = eval(equationInput);
   alert(equationAnswer);
+  document.getElementById("calculated").innerText = displayed;
 }
 
 [].forEach.call(document.querySelectorAll('.calc-button-equal'), function(element){
   element.addEventListener('click', alertEquals);
 }, false);
 
-//var calculator = function() {
-//  
-//}
 
 function changeContent (calculated) {
     	var myelement = document.getElementById("calculated");
     	myelement.innerHTML = calculated;
     }
+

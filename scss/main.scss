@@ -34,13 +34,15 @@ body {
 	border-radius: 10px 10px 0 0;
 	color: white;
 	font-size: 30px;
+	text-align: right;
+	margin: 0px;
+	
+	h2 {
+		margin: 10px 0 0 0;
+		padding-right: 10px;
+	}
 }
 
-.display {
-	margin: 0px;
-	color: white;
-	line-height: 65px;
-}
 
 button {
 	@include span-columns(3);
