@@ -5,6 +5,32 @@ var calculated = 0;
 var displayed = "0";
 
 
+// addEventListeners to all buttons  *****************************
+
+[].forEach.call(document.querySelectorAll('.calc-button-number'), function(element){
+  element.addEventListener('click', alertNumber);
+}, false);
+
+[].forEach.call(document.querySelectorAll('.operator'), function(element){
+  element.addEventListener('click', alertOperator);
+}, false);
+
+[].forEach.call(document.querySelectorAll('.calc-button-plusminus'), function(element){
+  element.addEventListener('click', alertToNegative);
+}, false);
+
+[].forEach.call(document.querySelectorAll('.calc-button-percent'), function(element){
+  element.addEventListener('click', alertPercentage);
+}, false);
+
+[].forEach.call(document.querySelectorAll('.calc-button-period'), function(element){
+  element.addEventListener('click', alertPeriod);
+}, false);
+
+[].forEach.call(document.querySelectorAll('.calc-button-equal'), function(element){
+  element.addEventListener('click', alertEquals);
+}, false);
+
 // Number button press!
 function alertNumber(event) {
   var button = event.target;
@@ -13,21 +39,13 @@ function alertNumber(event) {
   changeContent(numberList);
 }
 
-[].forEach.call(document.querySelectorAll('.calc-button-number'), function(element){
-  element.addEventListener('click', alertNumber);
-}, false);
-
-
 // Operator button press!
 function alertOperator(event) {
   var button = event.target;
   var text = button.textContent;
   var lastPressed = numberList.push(text);
+  changeContent(numberList);
 }
-
-[].forEach.call(document.querySelectorAll('.operator'), function(element){
-  element.addEventListener('click', alertOperator);
-}, false);
 
 
 // Clear button press!
@@ -38,10 +56,6 @@ function alertActionClear(event) {
   changeContent(displayed)
 }
 
-[].forEach.call(document.querySelectorAll('.calc-button-ac'), function(element){
-  element.addEventListener('click', alertActionClear);
-}, false);
-
 
 // Negative button press!
 function alertToNegative(event) {
@@ -49,10 +63,6 @@ function alertToNegative(event) {
   var text = button.textContent;
   alert(text);
 }
-
-[].forEach.call(document.querySelectorAll('.calc-button-plusminus'), function(element){
-  element.addEventListener('click', alertToNegative);
-}, false);
 
 
 // Percentage button press!
@@ -62,10 +72,6 @@ function alertPercentage(event) {
   alert(text);
 }
 
-[].forEach.call(document.querySelectorAll('.calc-button-percent'), function(element){
-  element.addEventListener('click', alertPercentage);
-}, false);
-
 
 // Period button press!
 function alertPeriod(event) {
@@ -73,10 +79,6 @@ function alertPeriod(event) {
   var text = button.textContent;
   var lastPressed = numberList.push(text);
 }
-
-[].forEach.call(document.querySelectorAll('.calc-button-period'), function(element){
-  element.addEventListener('click', alertPeriod);
-}, false);
 
 
 // Equal button press!
@@ -88,10 +90,6 @@ function alertEquals(event) {
   alert(equationAnswer);
   document.getElementById("calculated").innerText = displayed;
 }
-
-[].forEach.call(document.querySelectorAll('.calc-button-equal'), function(element){
-  element.addEventListener('click', alertEquals);
-}, false);
 
 
 // Calculated display change!
