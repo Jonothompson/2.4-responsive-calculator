@@ -57,8 +57,9 @@ function alertOperator(event) {
 function alertActionClear(event) {
   var button = event.target;
   var text = button.textContent;
-  numberList.push ([]);
-  changeContent(calculated)
+  changeContent(calculated);
+  numberList = [];
+  displayed = " ";
 }
 
 
@@ -100,8 +101,8 @@ function alertEquals(event) {
   document.getElementById("calculated").innerText = displayed;
   displayed+=text;
   changeContent(equationAnswer);
-    numberList = [];
   numberList.push(equationAnswer);
+  numberList = [];
 }
 
 
