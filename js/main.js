@@ -1,8 +1,7 @@
 
 var numberList = [];
-
 var calculated = 0;
-var displayed = "0";
+var displayed = " ";
 
 
 // addEventListeners to all buttons  *****************************
@@ -31,20 +30,26 @@ var displayed = "0";
   element.addEventListener('click', alertEquals);
 }, false);
 
+[].forEach.call(document.querySelectorAll('.calc-button-ac'), function(element){
+  element.addEventListener('click', alertActionClear);
+}, false);
+
 // Number button press!
 function alertNumber(event) {
   var button = event.target;
-  var number = Number(button.textContent);
-  var lastPressed = numberList.push(number);
-  changeContent(numberList);
+  var number = button.textContent;
+  numberList.push(number);
+  displayed+=number;
+  changeContent(displayed);
 }
 
 // Operator button press!
 function alertOperator(event) {
   var button = event.target;
   var text = button.textContent;
-  var lastPressed = numberList.push(text);
-  changeContent(numberList);
+  numberList.push(text);
+  displayed+=text;
+  changeContent(displayed);
 }
 
 
@@ -52,8 +57,8 @@ function alertOperator(event) {
 function alertActionClear(event) {
   var button = event.target;
   var text = button.textContent;
-  numberList = [];
-  changeContent(displayed)
+  numberList.push ([]);
+  changeContent(calculated)
 }
 
 
@@ -61,7 +66,9 @@ function alertActionClear(event) {
 function alertToNegative(event) {
   var button = event.target;
   var text = button.textContent;
-  alert(text);
+  numberList.push(text);
+  displayed+=text;
+  changeContent(displayed);
 }
 
 
@@ -69,7 +76,8 @@ function alertToNegative(event) {
 function alertPercentage(event) {
   var button = event.target;
   var text = button.textContent;
-  alert(text);
+  displayed+=text;
+  changeContent(displayed);
 }
 
 
@@ -77,7 +85,9 @@ function alertPercentage(event) {
 function alertPeriod(event) {
   var button = event.target;
   var text = button.textContent;
-  var lastPressed = numberList.push(text);
+  numberList.push(text);
+  displayed+=text;
+  changeContent(displayed);
 }
 
 
@@ -85,10 +95,13 @@ function alertPeriod(event) {
 function alertEquals(event) {
   var button = event.target;
   var text = button.textContent;
-  var equationInput = numberList.join("");
+  var equationInput = numberList.join(" ");
   var equationAnswer = eval(equationInput);
-  alert(equationAnswer);
   document.getElementById("calculated").innerText = displayed;
+  displayed+=text;
+  changeContent(equationAnswer);
+    numberList = [];
+  numberList.push(equationAnswer);
 }
 
 
