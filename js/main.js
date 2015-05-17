@@ -99,10 +99,10 @@ function alertEquals(event) {
   var equationInput = numberList.join(" ");
   var equationAnswer = eval(equationInput);
   document.getElementById("calculated").innerText = displayed;
-  displayed+=text;
   changeContent(equationAnswer);
-  numberList.push(equationAnswer);
   numberList = [];
+  numberList.push(equationAnswer);
+  displayed = equationAnswer;
 }
 
 
